@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# MYAPP documentation build configuration file, created by
+# rrn_kr documentation build configuration file, created by
 # sphinx-quickstart on Mon Nov 30 18:51:11 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -45,8 +45,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'MYAPP'
-copyright = u'2015, mete0r'
+project = u'rrn_kr'
+copyright = u'2016, mete0r'
 author = u'mete0r'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -199,7 +199,7 @@ html_static_path = ['_static']
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'MYAPPdoc'
+htmlhelp_basename = 'rrn_krdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -221,7 +221,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'MYAPP.tex', u'MYAPP Documentation', u'mete0r', 'manual'),
+    (master_doc, 'rrn_kr.tex', u'rrn_kr Documentation', u'mete0r', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -250,7 +250,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'myapp', u'MYAPP Documentation',
+    (master_doc, 'myapp', u'rrn_kr Documentation',
      [author], 1)
 ]
 
@@ -264,7 +264,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'MYAPP', u'MYAPP Documentation', author, 'MYAPP',
+    (master_doc, 'rrn_kr', u'rrn_kr Documentation', author, 'rrn_kr',
      'One line description of project.', 'Miscellaneous'),
 ]
 

@@ -1,4 +1,4 @@
-MYAPP
-=====
+rrn_kr
+======
 
-SOME_DESCRIPTION
+ROK Resident Registry Number (RRN) validator

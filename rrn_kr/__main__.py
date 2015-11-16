@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-#   MYAPP : SOME_DESCRIPTION
-#   Copyright (C) 2015 mete0r <mete0r@sarangbang.or.kr>
+#   rrn_kr : ROK Resident Registry Number (RRN) validator
+#   Copyright (C) 2016 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as published by
@@ -18,3 +18,8 @@
 #
 from __future__ import absolute_import
 from __future__ import unicode_literals
+from .cli import main
+
+
+if __name__ == '__main__':
+    main()

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-#   MYAPP : SOME_DESCRIPTION
-#   Copyright (C) 2015 mete0r <mete0r@sarangbang.or.kr>
+#   rrn_kr : ROK Resident Registry Number (RRN) validator
+#   Copyright (C) 2016 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as published by
@@ -19,18 +19,18 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from unittest import TestCase
+import os.path
+import shutil
 
-class Recipe:
 
-    def __init__(self, buildout, name, options):
+class AppTest(TestCase):
+
+    def setUp(self):
+        name = self.id()
+        if os.path.exists(name):
+            shutil.rmtree(name)
+        os.mkdir(name)
+
+    def test_nothing(self):
         pass
-
-    def install(self):
-        return tuple()
-
-    def update(self):
-        return tuple()
-
-
-def uninstall(name, options):
-    pass

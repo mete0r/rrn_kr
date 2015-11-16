@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-#   MYAPP : SOME_DESCRIPTION
-#   Copyright (C) 2015 mete0r <mete0r@sarangbang.or.kr>
+#   rrn_kr : ROK Resident Registry Number (RRN) validator
+#   Copyright (C) 2016 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as published by
@@ -20,5 +20,14 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 
-def main():
-    pass
+def app_factory(global_config, **local_conf):
+    ''' PasteDeploy app_factory
+
+    see http://pythonpaste.org/deploy/
+    '''
+    def app(environ, start_response):
+        status = '200 OK'
+        headers = [('Content-Type', 'text/plain; charset=utf-8')]
+        start_response(status, headers)
+        yield 'app ok'
+    return app

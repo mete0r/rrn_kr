@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-#   MYAPP : SOME_DESCRIPTION
-#   Copyright (C) 2015 mete0r <mete0r@sarangbang.or.kr>
+#   rrn_kr : ROK Resident Registry Number (RRN) validator
+#   Copyright (C) 2016 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as published by
@@ -66,7 +66,7 @@ def readfile(path):
 
 @setup_dir
 def get_version():
-    from MYAPP import __version__
+    from rrn_kr import __version__
     return __version__
 
 
@@ -85,32 +85,33 @@ def alltests():
 
 tests_require = [
     'zope.testrunner',
+    'colander',
 ]
 
 
 setup_info = {
-    'name': 'MYAPP',
+    'name': 'rrn_kr',
     'version': get_version(),
-    'description': 'SOME_DESCRIPTION',
+    'description': 'ROK Resident Registry Number (RRN) validator',
     'long_description': '\n'.join([readfile('README.rst'),
                                    readfile('CHANGES.rst')]),
 
     'author': 'mete0r',
     'author_email': 'mete0r@sarangbang.or.kr',
     'license': 'GNU Affero General Public License v3 or later (AGPLv3+)',
-    # 'url': 'https://github.com/mete0r/MYAPP',
+    'url': 'https://github.com/mete0r/rrn_kr',
 
     'packages': [
-        'MYAPP',
-        'MYAPP.recipe',
-        'MYAPP.tests',
+        'rrn_kr',
+        'rrn_kr.recipe',
+        'rrn_kr.tests',
     ],
     # do not use '.'; just omit to specify setup.py directory
     'package_dir': {
         # '': 'src',
     },
     'package_data': {
-        # 'MYAPP.tests': [
+        # 'rrn_kr.tests': [
         #   'files/*',
         # ],
     },
@@ -123,30 +124,35 @@ setup_info = {
     },
     'entry_points': {
         'console_scripts': [
-            'MYAPP = MYAPP.cli:main',
+            # 'rrn_kr = rrn_kr.cli:main',
         ],
         'zc.buildout': [
-            'default = MYAPP.recipe:Recipe',
+            # 'default = rrn_kr.recipe:Recipe',
         ],
         'zc.buildout.uninstall': [
-            'default = MYAPP.recipe:uninstall',
+            # 'default = rrn_kr.recipe:uninstall',
         ],
         'paste.app_factory': [
-            'main = MYAPP.wsgi:app_factory',
+            # 'main = rrn_kr.wsgi:app_factory',
         ],
     },
     'classifiers': [
-        # 'Development Status :: 4 - Beta',
-        # 'Intended Audience :: Developers',
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',  # noqa
-        # 'Operating System :: OS Independent',
-        # 'Programming Language :: Python',
-        # 'Programming Language :: Python :: 2.7',
-        # 'Programming Language :: Python :: 3.4',
-        # 'Programming Language :: Python :: Implementation :: CPython',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: Implementation :: Jython',
+        'Programming Language :: Python :: Implementation :: PyPy',
     ],
-    'keywords': [],
-    # 'zip_safe': False,
+    'keywords': [
+        'RRN',
+        'Resident Registry Number',
+    ],
+    'zip_safe': True,
 }
 
 
