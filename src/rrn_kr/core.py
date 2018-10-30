@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #   rrn_kr : ROK Resident Registry Number (RRN) validator
-#   Copyright (C) 2016 mete0r <mete0r@sarangbang.or.kr>
+#   Copyright (C) 2018 mete0r <mete0r@sarangbang.or.kr>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU Affero General Public License as published by
@@ -250,7 +250,6 @@ region_codes = {
     '인천': tuple(range(13, 16)),
     '경기': tuple(range(16, 26)),
     '강원': tuple(range(26, 35)),
-    '강원': tuple(range(26, 34)),
     '충청북도': tuple(range(35, 40)),
     '대전': tuple([40]),
     '충청남도': tuple(range(41, 48)),
