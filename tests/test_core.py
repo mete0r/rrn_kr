@@ -26,9 +26,9 @@ from unittest import TestCase
 class CoreTest(TestCase):
 
     def test_construct_string(self):
-        from ..core import authenticate_string
-        from ..core import construct_string
-        from ..core import region_codes
+        from rrn_kr.core import authenticate_string
+        from rrn_kr.core import construct_string
+        from rrn_kr.core import region_codes
         birth_date = date(1980, 12, 31)
         s = construct_string(birth_date, male=False, foreigner=False,
                              region_code=region_codes['서울'][1],
@@ -37,37 +37,37 @@ class CoreTest(TestCase):
         authenticate_string(s)
 
     def test_authenticate_string(self):
-        from ..core import authenticate_string
+        from rrn_kr.core import authenticate_string
         s = '801231-2011379'
         actual = authenticate_string(s)
         self.assertEquals('801231-2011379', actual)
 
     def test_authenticate_string_invalid_digits(self):
-        from ..core import authenticate_string
-        from ..core import InvalidDigits
+        from rrn_kr.core import authenticate_string
+        from rrn_kr.core import InvalidDigits
         s = '801231-a011379'
         self.assertRaises(InvalidDigits, authenticate_string, s)
 
     def test_authenticate_string_invalid_length(self):
-        from ..core import authenticate_string
-        from ..core import InvalidLength
+        from rrn_kr.core import authenticate_string
+        from rrn_kr.core import InvalidLength
         s = '8012312011379'
         self.assertRaises(InvalidLength, authenticate_string, s)
 
     def test_authenticate_string_invalid_format(self):
-        from ..core import authenticate_string
-        from ..core import InvalidFormat
+        from rrn_kr.core import authenticate_string
+        from rrn_kr.core import InvalidFormat
         s = '801231=2011379'
         self.assertRaises(InvalidFormat, authenticate_string, s)
 
     def test_authenticate_string_bad_authentication(self):
-        from ..core import authenticate_string
-        from ..core import BadAuthentication
+        from rrn_kr.core import authenticate_string
+        from rrn_kr.core import BadAuthentication
         s = '801231-2011378'
         self.assertRaises(BadAuthentication, authenticate_string, s)
 
     def test_RRN(self):
-        from ..core import RRN
+        from rrn_kr.core import RRN
         rrn = RRN.fromstring('801231-2011379')
         self.assertEquals(date(1980, 12, 31),
                           rrn.birth_date)

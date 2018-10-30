@@ -1,0 +1,9 @@
+[run]
+branch = True
+source = rrn_kr
+
+[paths]
+source =
+	src/rrn_kr
+	.tox/*/lib/python*/site-packages/rrn_kr
+	.tox/pypy*/site-packages/rrn_kr

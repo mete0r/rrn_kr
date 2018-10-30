@@ -1,6 +1,7 @@
 /.coverage
 /.eggs
 /.installed.cfg
+/.pip-sync
 /.tox
 /bin
 /build
@@ -18,6 +19,7 @@
 /share
 /site-packages
 .*.sw?
+*.mo
 *.pyc
 *.pyo
 *$py.class

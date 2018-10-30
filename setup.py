@@ -18,8 +18,10 @@
 #
 from __future__ import with_statement
 from contextlib import contextmanager
+from distutils.command.build import build as _build
 import io
 import os.path
+import re
 
 
 def setup_dir(f):
@@ -66,8 +68,12 @@ def readfile(path):
 
 @setup_dir
 def get_version():
-    from rrn_kr import __version__
-    return __version__
+    source = readfile('src/rrn_kr/__init__.py')
+    version_match = re.search(r'^__version__ = [\'"]([^\'"]*)[\'"]',
+                              source, re.M)
+    if not version_match:
+        raise RuntimeError('Unable to find version string.')
+    return version_match.group(1)
 
 
 def alltests():
@@ -83,10 +89,12 @@ def alltests():
     return unittest.TestSuite(suites)
 
 
-tests_require = [
-    'zope.testrunner',
-    'colander',
-]
+setup_requires = readfile('requirements/setup.in')
+
+install_requires_filename = 'requirements.in'
+install_requires = readfile(install_requires_filename)
+
+tests_require = readfile('requirements/test.in')
 
 
 setup_info = {
@@ -103,20 +111,18 @@ setup_info = {
 
     'packages': [
         'rrn_kr',
-        'rrn_kr.recipe',
-        'rrn_kr.tests',
     ],
     # do not use '.'; just omit to specify setup.py directory
     'package_dir': {
-        # '': 'src',
+        '': 'src',
     },
     'package_data': {
-        # 'rrn_kr.tests': [
-        #   'files/*',
-        # ],
+        'rrn_kr': [
+            'locale/*/*/*.mo',
+        ],
     },
-    'install_requires': [
-    ],
+    'setup_requires': setup_requires,
+    'install_requires': install_requires,
     'test_suite': '__main__.alltests',
     'tests_require': tests_require,
     'extras_require': {
@@ -156,9 +162,18 @@ setup_info = {
 }
 
 
+class build(_build):
+    def run(self):
+        self.run_command('compile_catalog')
+        _build.run(self)
+
+
 @setup_dir
 def main():
     setuptools = import_setuptools()
+    setup_info['cmdclass'] = {
+        'build': build,
+    }
     setuptools.setup(**setup_info)
 
 

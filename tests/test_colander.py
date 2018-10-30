@@ -26,7 +26,7 @@ class ValidatorTest(TestCase):
 
     def test_validator(self):
         import colander
-        from ..colander import validate_rrn
+        from rrn_kr.colander import validate_rrn
 
         class Person(colander.MappingSchema):
             rrn = colander.SchemaNode(
@@ -102,7 +102,7 @@ class RRNTest(TestCase):
 
     def test_deserialize(self):
         import colander
-        from ..colander import RRN
+        from rrn_kr.colander import RRN
 
         class Person(colander.MappingSchema):
             rrn = RRN()

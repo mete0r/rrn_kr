@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to rrn_kr's documentation!
-=================================
+==================================
 
 Contents:
 
