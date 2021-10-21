@@ -4,21 +4,46 @@
 #
 #    pip-compile --find-links=virtualenv_support --output-file=requirements/lint.txt requirements/lint.in requirements/setup.in
 #
---find-links virtualenv_support
-
-babel==2.8.0              # via -r requirements/setup.in
-check-manifest==0.41      # via -r requirements/lint.in
-docutils==0.16            # via pyroma
-entrypoints==0.3          # via flake8
-flake8==3.7.9             # via -r requirements/lint.in
-mccabe==0.6.1             # via flake8
-pep517==0.8.2             # via check-manifest
-pycodestyle==2.5.0        # via flake8
-pyflakes==2.1.1           # via flake8
-pygments==2.6.1           # via pyroma
-pyroma==2.6               # via -r requirements/lint.in
-pytz==2020.1              # via babel
-toml==0.10.0              # via check-manifest
+build==0.7.0
+    # via check-manifest
+certifi==2021.10.8
+    # via requests
+charset-normalizer==2.0.7
+    # via requests
+check-manifest==0.47
+    # via -r requirements/lint.in
+docutils==0.17.1
+    # via pyroma
+flake8==4.0.1
+    # via -r requirements/lint.in
+idna==3.3
+    # via requests
+mccabe==0.6.1
+    # via flake8
+packaging==21.0
+    # via build
+pep517==0.12.0
+    # via build
+pycodestyle==2.8.0
+    # via flake8
+pyflakes==2.4.0
+    # via flake8
+pygments==2.10.0
+    # via pyroma
+pyparsing==2.4.7
+    # via packaging
+pyroma==3.2
+    # via -r requirements/lint.in
+requests==2.26.0
+    # via pyroma
+toml==0.10.2
+    # via check-manifest
+tomli==1.2.1
+    # via
+    #   build
+    #   pep517
+urllib3==1.26.7
+    # via requests
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
